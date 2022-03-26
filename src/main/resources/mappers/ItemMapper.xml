@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.example.item10.item.ItemMapper'>
+
+    <select id='getList' parameterType='java.util.LinkedHashMap' resultType='java.util.LinkedHashMap'>
+        select board_seq,
+               case
+                   when board_type = 1 then '일반'
+                   else '-' end                               as board_type,
+               title,
+--                ifnull(content, '-')                           as content,
+               ifnull(cre_user_id, '-')                       as cre_user_id,
+               ifnull(mod_user_id, '-')                       as mod_user_id,
+               DATE_FORMAT(cre_date, '%m-%d')              as cre_date,
+               case
+                   when DATE_FORMAT(mod_date, '%m-%d') = '0000-00-00' then '-'
+                   else DATE_FORMAT(mod_date, '%m-%d') end as mod_date
+        from tb_board
+        where 1 = 1
+          and content_status = 1
+        group by mod_date
+        order by mod_date desc, cre_date desc
+        limit #{criteria.numPerPage} offset #{criteria.offset}
+    </select>
+
+    <select id="itemCount" parameterType="java.util.LinkedHashMap" resultType="java.lang.Integer">
+        select count(*)
+        from tb_board
+        where content_status = 1
+    </select>
+
+
+    <insert id="postList" parameterType='java.util.LinkedHashMap'>
+        insert into tb_board (board_type, title, cre_user_id, content)
+        values (#{board_type}, #{title}, #{cre_user_id}, #{content})
+    </insert>
+
+    <select id='detailList' parameterType='java.util.LinkedHashMap' resultType='java.util.LinkedHashMap'>
+        select board_seq,
+               (case
+                    when board_type = 1 then '일반'
+                    else '-' end)                as board_type,
+               title,
+               ifnull(content, '-')              as content,
+               ifnull(cre_user_id, '-')          as cre_user_id,
+               ifnull(mod_user_id, '-')          as mod_user_id,
+               DATE_FORMAT(cre_date, '%Y-%m-%d') as cre_date
+        from tb_board
+        where board_seq = #{board_seq}
+    </select>
+
+    <update id="updateList" parameterType="java.util.LinkedHashMap">
+        update tb_board
+        set board_type=#{board_type},
+            title=#{title},
+            mod_user_id=#{mod_user_id},
+            content=#{content},
+            mod_date=now()
+        where board_seq = #{board_seq}
+    </update>
+
+    <update id="deleteList" parameterType="java.util.LinkedHashMap">
+        update tb_board
+        set content_status = 2
+        where board_seq = #{board_seq}
+    </update>
+
+</mapper>
