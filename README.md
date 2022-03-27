@@ -3,53 +3,58 @@
 ## Stack
 - java / spring-boot 
 - mariadb / mybatis
-- jsp / html / css / javascript / jquery / ajax
+- jsp (jstl) / html / css / javascript / jquery / ajax
 
 ## Structure
 ```
-item 10
-  📄 build.gradle
-  📁 build
-  📁 gradle
-  📁 lib
-  📁 src
-      📁 main
-          📁 java
-              📁 com.example.item10
-                 📁 config
-                 📁 item
-                    📘 ItemController
-                    📗 ItemMapper
-                    📘 ItemService
-                 📁 main
-                    📘 MainController
-                 📁 util
-                    📁 paging
-                      📘 Criteria
-                      📘 PageMaker
-                 📘 Item10Application
-         📁 resources
-             📁 mappers
-                📙 ItemMapper.xml
-             📒 application.properties
-         📁 webapp
-             📁 WEB-INF
-                📁 css
-                📁 image
-                📁 js
-                   📁 pagination
-                📁 views
-                   📁 index
-                      📙 detail.jsp
-                      📙 index.jsp (메인 페이지)
-                      📙 post.jsp
-                      📙 update.jsp
-                   📙 bootstrap.jsp
+📚 item 10
+    📄 build.gradle
+    📁 build
+    📁 gradle
+    📁 lib
+    📁 src
+        📁 main
+            📂 java
+                📁 com.example.item10
+                   📁 config
+                   📁 item
+                      📘 ItemController
+                      📗 ItemMapper
+                      📘 ItemService
+                   📁 main
+                      📘 MainController
+                   📁 util
+                      📁 paging
+                         📘 Criteria
+                         📘 PageMaker
+                   📘 Item10Application
+           📂 resources
+               📁 mappers
+                   📙 ItemMapper.xml
+               📒 application.properties
+           📂 webapp
+               📁 WEB-INF
+                   📁 css
+                   📁 image
+                   📁 js
+                      📁 pagination
+                   📁 views
+                      📁 index
+                         📙 detail.jsp
+                         📙 index.jsp (메인 페이지)
+                         📙 post.jsp
+                         📙 update.jsp
+                      📙 bootstrap.jsp
 ```
 
 
 ## Springboot java
-**🛠 패키지매니저 = Maven (= Spring 선호), Gradle (= Springboot 선호)**
-> Request / Response ⇄ Controller ⇄ Service / Provider ⇄ Mapper ⇄ Mapper.xml
-
+> Request / Response ⇄ Controller ⇄ Service / Provider ⇄ Mapper ⇄ Mapper.xml    
+- **Type: Gradle (= Springboot 선호)**
+- **Java: 11**
+- **Packaging: Jar**
+- Spring Boot DevTools
+- Lombok
+- Spring Web
+- MariaDB Driver
 
