@@ -41,7 +41,7 @@ item 10
                 📁 views
                    📁 index
                       📙 detail.jsp
-                      📙 index.jsp
+                      📙 index.jsp (메인 페이지)
                       📙 post.jsp
                       📙 update.jsp
                    📙 bootstrap.jsp
