@@ -46,4 +46,8 @@ item 10
 ```
 
 
+## Springboot java
+**🛠 패키지매니저 = Maven (= Spring 선호), Gradle (= Springboot 선호)**
+> Request / Response ⇄ Controller ⇄ Service / Provider ⇄ Mapper ⇄ Mapper.xml
+
 
