@@ -8,6 +8,7 @@
 ## Structure
 ```
 item 10
+  📄 build.gradle
   📁 build
   📁 gradle
   📁 lib
@@ -26,6 +27,7 @@ item 10
                     📁 paging
                       📘 Criteria
                       📘 PageMaker
+                 📘 Item10Application
          📁 resources
              📁 mappers
                 📙 ItemMapper.xml
