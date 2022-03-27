@@ -2,8 +2,8 @@
 
 ## Stack
 - java / spring-boot 
-- mariadb / mybatis
-- jsp (jstl) / html / css / javascript / jquery / ajax
+- mariaDB / mybatis
+- jsp (jstl) / html / css / javascript / JQuery / ajax
 
 ## Structure
 ```
